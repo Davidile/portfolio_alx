@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{% block title %}
+ my rentals
+{%endblock%}
+
+{%block post%}
+
+    <div class="details">
+    <h2>highights of items</h2>
+   
+     <table>
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>firstname</th>
+            <th>secondname</th>
+            <th>Email</th>
+            <th>phone</th>
+            <th>description</th>
+            <th>created_at</th>
+            <th>action</th>
+            </tr>
+            
+        </thead>
+        {% for us in me %}
+        <div>
+        <tbody>
+            
+            <td>{{us.id}}</td>
+            <td>{{us.firstname}}</td>
+            <td>{{us.secondname}}</td>
+            <td>{{us.email}}</td>
+            <td>{{us.phone}}</td>
+            <td>{{us.description}}</td>
+            <td>{{us.created_at}}</td>
+            <td><a href="/item/{{us.id}}">edit</a> 
+            <a href="">delete</a>
+            </td>
+        </tbody>
+        </div>
+        
+        {% endfor %}
+    </table>
+    </div>
+{%endblock%}
+   
+    

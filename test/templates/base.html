@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+        {%block title%}
+        my title
+        {%endblock%}
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='base.css') }}">
+    <script type="text/javascript" src="{{url_for('static',filename='scripts/test.js')}}"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div>
+            <img class="img"  src="../static/logo.png" alt="">
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <a onclick="sayhello()" href="{{url_for('base')}}">Home</a>
+                </li>
+                <li>
+                    <a href="{{url_for('products')}}">Products</a>
+                </li>
+                <li>
+                    <a href="{{url_for('try_to')}}">details</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">signup</a>
+                </li>
+
+                
+            </ul>
+        </div>
+    </div>
+    <h1>Welcome to <span>FRANKDAV</span> tent booking website.</h1>
+    <button class="btn"> <a href="">Book now</a> </button>
+
+    {%block content%}
+     
+    {%endblock%}
+
+    {%block post%}
+
+    {%endblock%}
+
+    <div class="footer">
+        <h3>Copyright&copy; 2023 Mugomatech. All rights reserved.</h3>
+    </div>
+</body>
+</html>
