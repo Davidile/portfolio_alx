@@ -16,8 +16,11 @@
         </div>
     </div>
         <form action="/show/{{user.id}}/try" method="POST">
+            <label for="">username</label><br>
+            <input type="text" required name="username" value="{{user.username}}"><br><br>
             <label for="">email</label><br>
-            <input type="text" required name="email" value="{{user.email}}">
+            <input type="text" required name="email" value="{{user.email}}"><br><br>
+        
         
             <input type="submit">
 

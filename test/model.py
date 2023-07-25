@@ -11,10 +11,7 @@ class Item(Base):
 
     __tablename__="form"
     id=Column(Integer, primary_key=True)
-    description=Column(String)
-    firstname=Column(String)
-    secondname=Column(String)
+    username=Column(String)
     email=Column(String)
-    phone=Column(String)
     created_at=Column(DateTime,nullable=False,default=datetime.utcnow())
     

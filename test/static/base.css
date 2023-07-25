@@ -20,7 +20,7 @@ body
  justify-content: space-between;
  font-family:Arial, Helvetica, sans-serif;
  text-transform: uppercase;
- font-size: 28px;
+ font-size: 18px;
  align-items: center;
  position: fixed;
  top: 0;
@@ -112,6 +112,11 @@ span{
 }
 .details{
     height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background-color: aliceblue;
     width: 800px;
     margin: 0% auto;
@@ -176,12 +181,190 @@ span{
     transition: 0.9s;
 }
 
-@media screen and (max-width:994px) {
-    ul,li,a{
-        display: inline-block;
-        list-style: none;
-        text-decoration: none;
-        color:  white;
-     
-    }
+@media screen and (min-width:360px) {
+    body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("../static/pic.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 1200px;
+    width:100%;
+    position: relative;
+    
+    
+}
+
+ .container
+{
+ height: 70px;   
+ background-color:rgb(29,29,148);
+ display: flex;
+ justify-content: space-between;
+ font-family:Arial, Helvetica, sans-serif;
+ text-transform: uppercase;
+ font-size: 18px;
+ align-items: center;
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 1;
+ 
+
+
+}
+.img{
+    margin: 20px;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+ul,li,a{
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+    color:  white;
+ 
+}
+.btn{
+    float: left;
+    margin-left: 20px;
+    height: 50px;
+    width: 100px;
+    background-color:red;
+    color: beige;
+    margin-right: 40px;
+    border: none;
+    border-radius: 10px;
+}
+.btn:hover{
+    background-color: blue;
+    color: red;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+   
+.h1{
+    text-align: center;
+    color: rgb(224, 17, 17);
+    font-size: 40px;
+    font-family: cursive;
+}
+h1{
+    margin-top: 90px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200px;
+    color: white;
+    
+}
+#container{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+span{
+    color: red;
+}
+
+.post{
+    display:flex;
+    justify-content: start;
+    align-items: center;
+
+    
+}
+.post div{
+    margin: 0 20px;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    height: 60px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.details{
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: aliceblue;
+    width: 400px;
+    margin: 0% auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+.up{
+    height: 950px;
+    background-color: aliceblue;
+    display:flex;
+    justify-content: center;
+    width: 400px;
+    margin-top: 80px;
+    margin: 0% auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+#tent1{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 20px;
+    height: 750px;
+    width: 300px;
+}
+.tent1{
+    height: 150px;
+    width: 150px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
+#tent2{
+    
+    height:650px;
+    width:300px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.tent2{
+    height:150px;
+    width:200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
+#btn{
+    background-color: blue;
+    height: 40px;
+    width: 80px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 100;
+}
+#btn:hover{
+    background-color: black;
+    cursor: pointer;
+    transition: 0.9s;
+}
+
 }

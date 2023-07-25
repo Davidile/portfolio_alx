@@ -23,7 +23,7 @@
         <div>
             <ul>
                 <li>
-                    <a onclick="sayhello()" href="{{url_for('base')}}">Home</a>
+                    <a href="{{url_for('base')}}">Home</a>
                 </li>
                 <li>
                     <a href="{{url_for('products')}}">Products</a>
@@ -31,19 +31,14 @@
                 <li>
                     <a href="{{url_for('try_to')}}">details</a>
                 </li>
-                <li>
-                    <a href="">About</a>
-                </li>
-                <li>
-                    <a href="">signup</a>
-                </li>
+                
 
                 
             </ul>
         </div>
     </div>
     <h1>Welcome to <span>FRANKDAV</span> tent booking website.</h1>
-    <button class="btn"> <a href="">Book now</a> </button>
+    
 
     {%block content%}
      

@@ -18,26 +18,6 @@ def products():
   users=session.query(Product).all()
   return render_template("tent.html", users=users)
 
-@app.route("/insert", methods=['POST','GET'])
-def get_data():
-  if request.method=="POST":
-     firstname=request.form.get('firstname')
-     secondname=request.form.get('secondname')
-     email=request.form.get('email')
-     phone=request.form.get('phone')
-     description=request.form.get('description')
-  
-     user=Item(firstname=firstname,secondname=secondname,email=email,phone=phone,description=description)
-     user.created_at=datetime.now()
-     session.rollback()
-     session.add(user)
-     session.commit()
-     session.close()
-    
-
-  return f"you logged in successfully!"
-
-
 @app.route("/access")
 def try_to():
   users=session.query(Item).all()
@@ -53,9 +33,17 @@ def show_id(n):
 @app.route("/show/<int:b>/try", methods=['POST'])
 def me(b):
   if request.method=="POST":
-   email=request.form.get(email)
-   us=session.query(Item).filter(Item.id==b).first()
-  return render_template('form.html',user=email,us=us)  
+   email=request.form.get('email')
+   username=request.form.get('username')
+  
+   user=Item(username=username,email=email)
+   user.created_at=datetime.now()
+   session.rollback()
+   session.add(user)
+   session.commit()
+   session.close()
+    
+  return f"Your choice was sent successfully!"
 
 
 
