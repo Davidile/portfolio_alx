@@ -99,7 +99,7 @@ def get_reset_password_form():
   return render_template('reset_password_email_sent.html',email=email)
 
 def send_reset_email(email,user,token):
-  reset_link=f"https://336a-105-160-50-69.ngrok-free.app/update_password?token={token}"
+  reset_link=f"https://portal.mugoma.tech/update_password?token={token}"
   msg=Message('Password Reset instructions ',sender=('Mugoma_Dev','mugomadavid24@gmail.com'),recipients=[email])
   msg.body=f"Hello {user},\n\n I received a request to reset your password.Kindly click the below link to reset your password:\n\n{reset_link}.\n\nIf you didn't request a password reset, please ignore this email.\n\n Best regards ,\n Mugoma David."
   Mail.send(msg)
