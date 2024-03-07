@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% block title %}
+   my Signup
+{%endblock%}
+
+{%block content%}
+    <div class="container bg-light login">
+    <h1 id="sigup">Register</h1>
+    {% with messages = get_flashed_messages(category_filter=['danger'])%}
+     {%if messages%}
+     <button type="submit" class="btn btn-danger ">
+      {% for message in messages%}
+        {{message}}
+        {%endfor%}
+     </button>
+        
+     
+     {%endif%}
+    {%endwith%}
+
+    {% with messages = get_flashed_messages(category_filter=['success'])%}
+    {%if messages%}
+    <button type="submit" class="btn btn-success ">
+      {% for message in messages%}
+        {{message}}
+        {%endfor%}
+     </button>
+      
+    
+    {%endif%}
+   {%endwith%}
+ 
+    <form  action="{{url_for('signup')}}"  method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="email" required aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Username</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="username" placeholder="username" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1"  placeholder="password" required>
+      </div>
+      <div class="mb-3 d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">Register</button>
+        <a href="{{url_for('login')}}">Already have an account?</a>
+      </div>
+     
+  </form>
+    
+   </div>
+{%endblock%}

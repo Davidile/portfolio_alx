@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block title %}
+   my Signup
+{%endblock%}
+
+{%block content%}
+   <div class="sigup">
+    <h1 id="sigup">login</h1>
+    <img src="" alt="" class="image-fliid rounded float-center">
+    {% with messages = get_flashed_messages(category_filter=['danger'])%}
+     {%if messages%}
+     <div class="danger">
+        {% for message in messages%}
+        {{message}}
+        {%endfor%}
+     </div>
+     {%endif%}
+    {%endwith%}
+
+    {% with messages = get_flashed_messages(category_filter=['success'])%}
+    {%if messages%}
+    <div class="success">
+       {% for message in messages%}
+       {{message}}
+       {%endfor%}
+    </div>
+    {%endif%}
+   {%endwith%}
+    <form action="{{url_for('login')}}"  method="POST">
+        <label for="username">Username</label><br>
+        <input type="text" name="username" required placeholder="username"><br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" required placeholder="password"><br><br>
+        <div><button class="btn1" type="submit"> login</button><br>Don't have an account <a class="btn2" href="{{url_for('signup')}}">Register</a></div>
+        <a class="red" href="{{url_for('show_reset_password_form')}}">Forgot password ?</a>
+        
+    </form>
+    
+   </div>
+{%endblock%}

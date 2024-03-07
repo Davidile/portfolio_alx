@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+        {%block title%}
+        my title
+        {%endblock%}
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='base.css') }}"> 
+    
+    <script type="text/javascript" src="{{ url_for('static',filename='scripts/alarm.js') }}"></script>
+    
+</head>
+<body>
+    
+    <div class="container">
+       
+        <div>
+            <img class="img"  src="../static/logo.png" alt="">
+        </div>
+        
+        <div>
+            <ul>
+                {% if 'username' in session %}
+                <li>
+                    <a href="{{url_for('dashboard')}}">dashboard</a>
+                </li>
+                <li>
+                    <a href="{{url_for('track_session')}}">Track_session</a>
+                </li>
+                <li>
+                    <a href="{{url_for('about')}}">About</a>
+                </li>
+               
+                <li>
+                    <a href="{{url_for('logout')}}"> logout</a>
+                </li>
+                
+                {%else%}
+           
+                
+                <li>
+                    <a href="{{url_for('signup')}}"> Signup</a>
+                </li>
+
+
+                 <li>
+                    <a href="{{url_for('login')}}"> Login</a>
+                </li>
+
+              {%endif%}
+            </ul>
+        </div>
+    </div>
+
+
+    {%block content%}
+     
+    {%endblock%}
+
+    {%block post%}
+
+    {%endblock%}
+
+
+    <div class="footer">
+        <h3>Copyright&copy; 2023 Mugomatech. All rights reserved.</h3>
+    </div>
+
+
+
+</body>
+</html>

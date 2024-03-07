@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% block title %}
+ my posts
+{%endblock%}
+
+{%block post%}
+ 
+ {%if 'username' in session%}
+ {% for post  in posts %}
+    <div class="posted">
+  
+   <h5>Latest session updates posted.</h5>
+   <p class="posted_at"> Posted by:{{post.users.username}} at {{post.date_posted}}</p>
+   <p class="mentor">Mentor's Name: {{post.mentor}}</p>
+   <p class="topic"> Topic: {{post.topic}}</p>
+   <p class="description">Description: {{post.description}}</p> 
+   <p class="date_str">Date: {{post.date_str}}</p>
+   <p class="time_str">Time: {{post.time_str}}</p>
+   <p class="duration_str">Duration:{{post.duration_str}}</p>
+   <button class="btn1">  <a href="https://meet.google.com/kdg-btbo-wem/">Join session</a></button>
+   </div>
+   {%endfor%} 
+    
+  {%endif%}
+{%endblock%}
+   
+    

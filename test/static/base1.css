@@ -1,0 +1,38 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../static/pic.png);
+    height: 1200px;
+    position: relative;
+    
+    
+
+}
+
+.login{
+    height: 450px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+h1{
+    text-align: center;
+    padding-top: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+
+}
+img.img{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

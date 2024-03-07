@@ -8,25 +8,31 @@
     <title>try me</title>
 </head>
 <body>
-    <h1>Application of the Tent</h1>
+    <h1>Application of a mentor on a peer learning day</h1>
     
     <div class="post">
         <div>
-           <h4>Hey user! It's nice to see you choose  {{user['title']}}</h4>
+           <h4>Hey!tracking your details .......</h4>
         </div>
     </div>
-        <form action="/show/{{user.id}}/try" method="POST">
-            <label for="">username</label><br>
-            <input type="text" required name="username" value="{{user.username}}"><br><br>
-            <label for="">email</label><br>
-            <input type="text" required name="email" value="{{user.email}}"><br><br>
-        
-        
+        <form action="{{url_for('add_post')}}" method="POST" >
+            <label for="">Name of the mentor</label><br>
+            <input type="text" required name="mentor" ><br><br>
+            <label for=""> Session topic</label><br>
+            <input type="text" name="topic" required><br><br>
+            <label for="">Describe the content of sub-topics or content of the topic in detail</label><br>
+            <textarea id="Describe" name="description" rows="4" cols="50 ">
+            </textarea><br>
+            <label for="">when will you mentor? :</label><br>
+            <input type="date" required name="date_str" ><br><br>
+            <label for="">What exactly the timezone? :</label><br>
+            <input type="time" required name="time_str" ><br><br>
+            <label for="">How long will it take? :</label><br>
+            <input type="text" required name="duration_str" ><br><br>
             <input type="submit">
 
         </form>
         
-    
-     
+        
 </body>
 </html>

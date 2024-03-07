@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% block title %}
+   my Signup
+{%endblock%}
+
+{%block content%}
+    <div class="sigup">
+    <h1 id="sigup">Signup</h1>
+    {% with messages = get_flashed_messages(category_filter=['danger'])%}
+     {%if messages%}
+     <div class="danger">
+        {% for message in messages%}
+        {{message}}
+        {%endfor%}
+     </div>
+     {%endif%}
+    {%endwith%}
+
+    {% with messages = get_flashed_messages(category_filter=['success'])%}
+    {%if messages%}
+    <div class="success">
+       {% for message in messages%}
+       {{message}}
+       {%endfor%}
+    </div>
+    {%endif%}
+   {%endwith%}
+    <form action="{{url_for('signup')}}"  method="POST">
+        <label for="email">Email</label><br>
+        <input type="email" name="email" required placeholder="email" autofocus ><br>
+        <label for="username">Username</label><br>
+        <input type="text" name="username" required placeholder="username" autofocus> <br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" required placeholder="password" autofocus><br><br>
+        <div ><button class="btn1" type="submit"> signup</button><br> Already have an account <a class="btn2" href="{{url_for('login')}}">login</a></div>
+       </form>
+    
+   </div>
+{%endblock%}
